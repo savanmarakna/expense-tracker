@@ -1,0 +1,47 @@
+CREATE DATABASE [expt]
+ COLLATE SQL_Latin1_General_CP1_CI_AS
+GO
+ALTER DATABASE [expt] SET COMPATIBILITY_LEVEL = 100
+GO
+ALTER DATABASE [expt] SET ANSI_PADDING OFF 
+GO
+ALTER DATABASE [expt] SET  DISABLE_BROKER 
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[catagories](
+	[ID] [int] IDENTITY(1,1) NOT NULL,
+	[Catagories] [varchar](50) COLLATE SQL_Latin1_General_CP1_CI_AS NOT NULL,
+	[Limit] [numeric](18, 0) NOT NULL,
+ CONSTRAINT [PK_catagories] PRIMARY KEY CLUSTERED 
+(
+	[ID] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON)
+)
+
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[expenses](
+	[ID] [int] IDENTITY(1,1) NOT NULL,
+	[Title] [varchar](50) COLLATE SQL_Latin1_General_CP1_CI_AS NOT NULL,
+	[Description] [varchar](50) COLLATE SQL_Latin1_General_CP1_CI_AS NOT NULL,
+	[Amount] [numeric](18, 0) NOT NULL,
+	[Catagory] [int] NOT NULL,
+	[Date] [datetime] NOT NULL,
+ CONSTRAINT [PK_Expenses] PRIMARY KEY CLUSTERED 
+(
+	[ID] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON)
+)
+
+GO
+
+ALTER TABLE [dbo].[expenses]  WITH CHECK ADD  CONSTRAINT [FK_Expenses_catagories] FOREIGN KEY([Catagory])
+REFERENCES [dbo].[catagories] ([ID])
+GO
+ALTER TABLE [dbo].[expenses] CHECK CONSTRAINT [FK_Expenses_catagories]
+GO
+

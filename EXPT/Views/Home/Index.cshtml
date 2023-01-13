@@ -1,0 +1,207 @@
+﻿@using EXPT.Models;
+@model dynamic
+
+@{
+    ViewBag.Title = "Home Page";
+}
+<style>
+    .showCatList{
+        visibility:collapse;
+    }
+</style>
+
+<div class="jumbotron">
+    <div class="row">
+        <div class="col-md-4">
+            <h3>Expense Limit</h3>
+            <h4 id="showTotExplimit"></h4>
+        </div>
+        <div class="col-md-4">
+            <h3>Total Expense</h3>
+            <h4 id="showTotExp"></h4>
+        </div>
+        <div class="col-md-4">
+            <h3>Remaining</h3>
+            <h4 id="showRemExp"></h4>
+        </div>
+    </div>
+</div>
+
+<h4>
+    <a href="https://localhost:44320/catagories/Create" class="btn btn-default">➕ New Catagory</a>
+</h4>
+<table class="table table-striped">
+    <thead>
+    <th>
+    </th>
+    <th>
+        Catagory
+    </th>
+    <th>
+        Limit
+    </th>
+    <th>
+    </th>
+    </thead>
+    <tbody>
+        @foreach (catagory ct in Model.catlist)
+        {
+            <tr>
+                <td>
+                    @*<a href="https://localhost:44320/Home/Addbycat/@ct.ID" class="btn btn-info">Show Expenses</a>*@
+                    <div class="btn btn-info" id="showExpList">Show Expense</div>
+                </td>
+                <td>
+                    <div id="catName">@ct.Catagories</div>
+                </td>
+                <td>
+                    @ct.Limit
+                </td>
+                <td>
+                    <a href="https://localhost:44320/catagories/Edit/@ct.ID" class="btn btn-success">Edit</a> |
+                    <a href="https://localhost:44320/catagories/Delete/@ct.ID" class="btn btn-danger">Delete</a>
+                </td>
+            </tr>
+            <tr class="showCatList" id="catExpList">
+                <td colspan="4">
+                    <table class="table">
+                        <thead>
+                        <th>
+                            Title
+                        </th>
+                        <th>
+                            Description
+                        </th>
+                        <th>
+                            Amount
+                        </th>
+                        <th>
+                            Catagory
+                        </th>
+                        <th>
+                            Date
+                        </th>
+                        <th>
+                        </th>
+                        </thead>
+                        <tbody>
+                            @foreach (Expens exp in Model.explist)
+                            {
+                                if (@ct.ID == @exp.Catagory)
+                                {
+                                    <tr>
+                                        <td>
+                                            @exp.Title
+                                        </td>
+                                        <td>
+                                            @exp.Description
+                                        </td>
+                                        <td>
+                                            @exp.Amount
+                                        </td>
+                                        <td id="catinList">@foreach (catagory cta in Model.catlist)
+                                            {
+                                                if (@cta.ID == @exp.Catagory)
+                                                {
+                                                    @ct.Catagories
+                                                }
+                                            }
+                                        </td>
+                                        <td>
+                                            @exp.Date
+                                        </td>
+                                    </tr>
+                                }
+                            }
+                        </tbody>
+                    </table>
+                </td>
+            </tr>
+    }
+        </tbody>
+    </table>
+
+<br />
+<hr />
+<br />
+
+<h4>
+    <a href="https://localhost:44320/Expenses/Create" class="btn btn-default">➕ New Expense</a>
+</h4>
+
+<table class="table table-striped">
+    <thead>
+        <th>
+            Title
+        </th>
+        <th>
+            Description
+        </th>
+        <th>
+            Amount
+        </th>
+        <th>
+            Catagory
+        </th>
+        <th>
+            Date
+        </th>
+        <th>
+
+        </th>
+    </thead>
+    <tbody>
+        @foreach (Expens exp in Model.explist)
+        {
+            <tr>
+                <td>
+                    @exp.Title
+                </td>
+                <td>
+                    @exp.Description
+                </td>
+                <td id="amount">@exp.Amount</td>
+                <td>
+
+                    @foreach (catagory ct in Model.catlist)
+                    {
+                        if (@ct.ID == @exp.Catagory)
+                        {
+                            @ct.Catagories
+                        }
+                    }
+                </td>
+                <td>
+                    @exp.Date
+                </td>
+                <td>
+                    <a href="https://localhost:44320/Expenses/Edit/@exp.ID" class="btn btn-success">Edit</a> |
+                    <a href="https://localhost:44320/Expenses/Delete/@exp.ID" class="btn btn-danger">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<script src="~/Scripts/app.js"></script>
+<script>
+                //var catrName = this.parentElement.parentElement.children[1].textContent;
+
+    var showExpList = document.querySelectorAll("#showExpList");
+    var catName = document.querySelectorAll("#catName");
+    var j = 0;
+    if (showExpList) {
+        for (j = 0; j < showExpList.length; j++) {
+            var catExpList = document.querySelectorAll("#catExpList");
+            showExpList[j].addEventListener("click", function () {
+
+                for (var i = 0; i < catExpList.length; i++) {
+
+                    if (catName[i].textContent.trim().toString() == catinList[i].textContent.trim().toString()) {
+                        catExpList[i].classList.toggle('showCatList');
+                    }
+                }
+            });
+        }
+    }
+</script>

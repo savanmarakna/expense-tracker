@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<MM:Instances xmlns:MM="http://schemas.microsoft.com/sqlserver/ManagementModel/Serialization/2009/11" xmlns:RE="http://schemas.microsoft.com/sqlserver/RelationalEngine/Serialization/2009/11">
+    <RE:RelationalIndex MM:Key="/Database[expt]/Schema[dbo]/Table[catagories]/RelationalIndex[PK_catagories]">
+        <RE:Parent MM:ReferenceKey="/Database[expt]/Schema[dbo]/Table[catagories]" />
+        <RE:CompactLargeObjects>True</RE:CompactLargeObjects>
+        <RE:DisallowPageLocks>False</RE:DisallowPageLocks>
+        <RE:DisallowRowLocks>False</RE:DisallowRowLocks>
+        <RE:FillFactor>0</RE:FillFactor>
+        <RE:FilterDefinition></RE:FilterDefinition>
+        <RE:IgnoreDuplicateKeys>False</RE:IgnoreDuplicateKeys>
+        <RE:IndexKey MM:ReferenceKey="/Database[expt]/Schema[dbo]/Table[catagories]/PrimaryKeyConstraint[PK_catagories]" />
+        <RE:IndexedColumns>
+            <MM:Reference MM:ReferenceKey="/Database[expt]/Schema[dbo]/Table[catagories]/RelationalIndex[PK_catagories]/IndexedColumn[ID]" />
+        </RE:IndexedColumns>
+        <RE:IsClustered>True</RE:IsClustered>
+        <RE:IsDisabled>False</RE:IsDisabled>
+        <RE:IsUnique>True</RE:IsUnique>
+        <RE:MaximumDegreeOfParallelism>-1</RE:MaximumDegreeOfParallelism>
+        <RE:Name>PK_catagories</RE:Name>
+        <RE:NoAutomaticRecomputation>False</RE:NoAutomaticRecomputation>
+        <RE:OnlineIndexOperation>False</RE:OnlineIndexOperation>
+        <RE:PadIndex>False</RE:PadIndex>
+        <RE:SortInTempdb>False</RE:SortInTempdb>
+    </RE:RelationalIndex>
+    <RE:RelationalIndex MM:Key="/Database[expt]/Schema[dbo]/Table[expenses]/RelationalIndex[PK_Expenses]">
+        <RE:Parent MM:ReferenceKey="/Database[expt]/Schema[dbo]/Table[expenses]" />
+        <RE:CompactLargeObjects>True</RE:CompactLargeObjects>
+        <RE:DisallowPageLocks>False</RE:DisallowPageLocks>
+        <RE:DisallowRowLocks>False</RE:DisallowRowLocks>
+        <RE:FillFactor>0</RE:FillFactor>
+        <RE:FilterDefinition></RE:FilterDefinition>
+        <RE:IgnoreDuplicateKeys>False</RE:IgnoreDuplicateKeys>
+        <RE:IndexKey MM:ReferenceKey="/Database[expt]/Schema[dbo]/Table[expenses]/PrimaryKeyConstraint[PK_Expenses]" />
+        <RE:IndexedColumns>
+            <MM:Reference MM:ReferenceKey="/Database[expt]/Schema[dbo]/Table[expenses]/RelationalIndex[PK_Expenses]/IndexedColumn[ID]" />
+        </RE:IndexedColumns>
+        <RE:IsClustered>True</RE:IsClustered>
+        <RE:IsDisabled>False</RE:IsDisabled>
+        <RE:IsUnique>True</RE:IsUnique>
+        <RE:MaximumDegreeOfParallelism>-1</RE:MaximumDegreeOfParallelism>
+        <RE:Name>PK_Expenses</RE:Name>
+        <RE:NoAutomaticRecomputation>False</RE:NoAutomaticRecomputation>
+        <RE:OnlineIndexOperation>False</RE:OnlineIndexOperation>
+        <RE:PadIndex>False</RE:PadIndex>
+        <RE:SortInTempdb>False</RE:SortInTempdb>
+    </RE:RelationalIndex>
+    <RE:IndexedColumn MM:Key="/Database[expt]/Schema[dbo]/Table[catagories]/RelationalIndex[PK_catagories]/IndexedColumn[ID]">
+        <RE:IsIncluded>False</RE:IsIncluded>
+        <RE:ReferencedColumn MM:ReferenceKey="/Database[expt]/Schema[dbo]/Table[catagories]/Column[ID]" />
+        <RE:SortOrder>Ascending</RE:SortOrder>
+    </RE:IndexedColumn>
+    <RE:IndexedColumn MM:Key="/Database[expt]/Schema[dbo]/Table[expenses]/RelationalIndex[PK_Expenses]/IndexedColumn[ID]">
+        <RE:IsIncluded>False</RE:IsIncluded>
+        <RE:ReferencedColumn MM:ReferenceKey="/Database[expt]/Schema[dbo]/Table[expenses]/Column[ID]" />
+        <RE:SortOrder>Ascending</RE:SortOrder>
+    </RE:IndexedColumn>
+    <RE:Login MM:Key="/Login[DESKTOP-H0T0LOL\savan]">
+        <RE:Language>us_english</RE:Language>
+        <RE:LoginType>Windows</RE:LoginType>
+        <RE:Name>DESKTOP-H0T0LOL\savan</RE:Name>
+    </RE:Login>
+</MM:Instances>

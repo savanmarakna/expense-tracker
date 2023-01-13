@@ -1,0 +1,4 @@
+====> to Run the Application..
+
+Run the index.cshtml in 
+--Views > Totexplimit > index.cshtml

@@ -1,0 +1,217 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<MM:Instances xmlns:MM="http://schemas.microsoft.com/sqlserver/ManagementModel/Serialization/2009/11" xmlns:RE="http://schemas.microsoft.com/sqlserver/RelationalEngine/Serialization/2009/11">
+    <RE:Database MM:Key="/Database[expt]">
+        <RE:Collation>
+            <RE:Name>SQL_Latin1_General_CP1_CI_AS</RE:Name>
+        </RE:Collation>
+        <RE:CompatibilityLevel>Version100</RE:CompatibilityLevel>
+        <RE:Name>expt</RE:Name>
+    </RE:Database>
+    <RE:Schema MM:Key="/Database[expt]/Schema[dbo]">
+        <RE:Parent MM:ReferenceKey="/Database[expt]" />
+        <RE:Name>dbo</RE:Name>
+        <RE:Owner MM:ReferenceKey="/Database[expt]/User[dbo]" />
+    </RE:Schema>
+    <RE:Table MM:Key="/Database[expt]/Schema[dbo]/Table[catagories]">
+        <RE:Parent MM:ReferenceKey="/Database[expt]/Schema[dbo]" />
+        <RE:Columns>
+            <MM:Reference MM:ReferenceKey="/Database[expt]/Schema[dbo]/Table[catagories]/Column[ID]" />
+            <MM:Reference MM:ReferenceKey="/Database[expt]/Schema[dbo]/Table[catagories]/Column[Catagories]" />
+            <MM:Reference MM:ReferenceKey="/Database[expt]/Schema[dbo]/Table[catagories]/Column[Limit]" />
+        </RE:Columns>
+        <RE:IsQuotedIdentifierOn>True</RE:IsQuotedIdentifierOn>
+        <RE:Name>catagories</RE:Name>
+    </RE:Table>
+    <RE:Table MM:Key="/Database[expt]/Schema[dbo]/Table[expenses]">
+        <RE:Parent MM:ReferenceKey="/Database[expt]/Schema[dbo]" />
+        <RE:Columns>
+            <MM:Reference MM:ReferenceKey="/Database[expt]/Schema[dbo]/Table[expenses]/Column[ID]" />
+            <MM:Reference MM:ReferenceKey="/Database[expt]/Schema[dbo]/Table[expenses]/Column[Title]" />
+            <MM:Reference MM:ReferenceKey="/Database[expt]/Schema[dbo]/Table[expenses]/Column[Description]" />
+            <MM:Reference MM:ReferenceKey="/Database[expt]/Schema[dbo]/Table[expenses]/Column[Amount]" />
+            <MM:Reference MM:ReferenceKey="/Database[expt]/Schema[dbo]/Table[expenses]/Column[Catagory]" />
+            <MM:Reference MM:ReferenceKey="/Database[expt]/Schema[dbo]/Table[expenses]/Column[Date]" />
+        </RE:Columns>
+        <RE:IsQuotedIdentifierOn>True</RE:IsQuotedIdentifierOn>
+        <RE:Name>expenses</RE:Name>
+    </RE:Table>
+    <RE:Column MM:Key="/Database[expt]/Schema[dbo]/Table[catagories]/Column[ID]">
+        <RE:DataType>
+            <RE:SystemDataType>
+                <RE:Length>0</RE:Length>
+                <RE:NumericPrecision>0</RE:NumericPrecision>
+                <RE:NumericScale>0</RE:NumericScale>
+                <RE:TypeSpec>Int</RE:TypeSpec>
+            </RE:SystemDataType>
+        </RE:DataType>
+        <RE:IdentityColumnInfo>
+            <RE:Seed>1</RE:Seed>
+            <RE:Increment>1</RE:Increment>
+        </RE:IdentityColumnInfo>
+        <RE:IsColumnSet>False</RE:IsColumnSet>
+        <RE:IsSparse>False</RE:IsSparse>
+        <RE:Name>ID</RE:Name>
+        <RE:Nullable>False</RE:Nullable>
+        <RE:RowGuidCol>False</RE:RowGuidCol>
+    </RE:Column>
+    <RE:Column MM:Key="/Database[expt]/Schema[dbo]/Table[catagories]/Column[Catagories]">
+        <RE:Collation>
+            <RE:Name>SQL_Latin1_General_CP1_CI_AS</RE:Name>
+        </RE:Collation>
+        <RE:DataType>
+            <RE:SystemDataType>
+                <RE:Length>50</RE:Length>
+                <RE:NumericPrecision>0</RE:NumericPrecision>
+                <RE:NumericScale>0</RE:NumericScale>
+                <RE:TypeSpec>VarChar</RE:TypeSpec>
+            </RE:SystemDataType>
+        </RE:DataType>
+        <RE:IsColumnSet>False</RE:IsColumnSet>
+        <RE:IsSparse>False</RE:IsSparse>
+        <RE:Name>Catagories</RE:Name>
+        <RE:Nullable>False</RE:Nullable>
+        <RE:RowGuidCol>False</RE:RowGuidCol>
+    </RE:Column>
+    <RE:Column MM:Key="/Database[expt]/Schema[dbo]/Table[catagories]/Column[Limit]">
+        <RE:DataType>
+            <RE:SystemDataType>
+                <RE:Length>0</RE:Length>
+                <RE:NumericPrecision>18</RE:NumericPrecision>
+                <RE:NumericScale>0</RE:NumericScale>
+                <RE:TypeSpec>Numeric</RE:TypeSpec>
+            </RE:SystemDataType>
+        </RE:DataType>
+        <RE:IsColumnSet>False</RE:IsColumnSet>
+        <RE:IsSparse>False</RE:IsSparse>
+        <RE:Name>Limit</RE:Name>
+        <RE:Nullable>False</RE:Nullable>
+        <RE:RowGuidCol>False</RE:RowGuidCol>
+    </RE:Column>
+    <RE:PrimaryKeyConstraint MM:Key="/Database[expt]/Schema[dbo]/Table[catagories]/PrimaryKeyConstraint[PK_catagories]">
+        <RE:Parent MM:ReferenceKey="/Database[expt]/Schema[dbo]/Table[catagories]" />
+        <RE:AssociatedIndex MM:ReferenceKey="/Database[expt]/Schema[dbo]/Table[catagories]/RelationalIndex[PK_catagories]" />
+        <RE:Name>PK_catagories</RE:Name>
+    </RE:PrimaryKeyConstraint>
+    <RE:Column MM:Key="/Database[expt]/Schema[dbo]/Table[expenses]/Column[ID]">
+        <RE:DataType>
+            <RE:SystemDataType>
+                <RE:Length>0</RE:Length>
+                <RE:NumericPrecision>0</RE:NumericPrecision>
+                <RE:NumericScale>0</RE:NumericScale>
+                <RE:TypeSpec>Int</RE:TypeSpec>
+            </RE:SystemDataType>
+        </RE:DataType>
+        <RE:IdentityColumnInfo>
+            <RE:Seed>1</RE:Seed>
+            <RE:Increment>1</RE:Increment>
+        </RE:IdentityColumnInfo>
+        <RE:IsColumnSet>False</RE:IsColumnSet>
+        <RE:IsSparse>False</RE:IsSparse>
+        <RE:Name>ID</RE:Name>
+        <RE:Nullable>False</RE:Nullable>
+        <RE:RowGuidCol>False</RE:RowGuidCol>
+    </RE:Column>
+    <RE:Column MM:Key="/Database[expt]/Schema[dbo]/Table[expenses]/Column[Title]">
+        <RE:Collation>
+            <RE:Name>SQL_Latin1_General_CP1_CI_AS</RE:Name>
+        </RE:Collation>
+        <RE:DataType>
+            <RE:SystemDataType>
+                <RE:Length>50</RE:Length>
+                <RE:NumericPrecision>0</RE:NumericPrecision>
+                <RE:NumericScale>0</RE:NumericScale>
+                <RE:TypeSpec>VarChar</RE:TypeSpec>
+            </RE:SystemDataType>
+        </RE:DataType>
+        <RE:IsColumnSet>False</RE:IsColumnSet>
+        <RE:IsSparse>False</RE:IsSparse>
+        <RE:Name>Title</RE:Name>
+        <RE:Nullable>False</RE:Nullable>
+        <RE:RowGuidCol>False</RE:RowGuidCol>
+    </RE:Column>
+    <RE:Column MM:Key="/Database[expt]/Schema[dbo]/Table[expenses]/Column[Description]">
+        <RE:Collation>
+            <RE:Name>SQL_Latin1_General_CP1_CI_AS</RE:Name>
+        </RE:Collation>
+        <RE:DataType>
+            <RE:SystemDataType>
+                <RE:Length>50</RE:Length>
+                <RE:NumericPrecision>0</RE:NumericPrecision>
+                <RE:NumericScale>0</RE:NumericScale>
+                <RE:TypeSpec>VarChar</RE:TypeSpec>
+            </RE:SystemDataType>
+        </RE:DataType>
+        <RE:IsColumnSet>False</RE:IsColumnSet>
+        <RE:IsSparse>False</RE:IsSparse>
+        <RE:Name>Description</RE:Name>
+        <RE:Nullable>False</RE:Nullable>
+        <RE:RowGuidCol>False</RE:RowGuidCol>
+    </RE:Column>
+    <RE:Column MM:Key="/Database[expt]/Schema[dbo]/Table[expenses]/Column[Amount]">
+        <RE:DataType>
+            <RE:SystemDataType>
+                <RE:Length>0</RE:Length>
+                <RE:NumericPrecision>18</RE:NumericPrecision>
+                <RE:NumericScale>0</RE:NumericScale>
+                <RE:TypeSpec>Numeric</RE:TypeSpec>
+            </RE:SystemDataType>
+        </RE:DataType>
+        <RE:IsColumnSet>False</RE:IsColumnSet>
+        <RE:IsSparse>False</RE:IsSparse>
+        <RE:Name>Amount</RE:Name>
+        <RE:Nullable>False</RE:Nullable>
+        <RE:RowGuidCol>False</RE:RowGuidCol>
+    </RE:Column>
+    <RE:Column MM:Key="/Database[expt]/Schema[dbo]/Table[expenses]/Column[Catagory]">
+        <RE:DataType>
+            <RE:SystemDataType>
+                <RE:Length>0</RE:Length>
+                <RE:NumericPrecision>0</RE:NumericPrecision>
+                <RE:NumericScale>0</RE:NumericScale>
+                <RE:TypeSpec>Int</RE:TypeSpec>
+            </RE:SystemDataType>
+        </RE:DataType>
+        <RE:IsColumnSet>False</RE:IsColumnSet>
+        <RE:IsSparse>False</RE:IsSparse>
+        <RE:Name>Catagory</RE:Name>
+        <RE:Nullable>False</RE:Nullable>
+        <RE:RowGuidCol>False</RE:RowGuidCol>
+    </RE:Column>
+    <RE:Column MM:Key="/Database[expt]/Schema[dbo]/Table[expenses]/Column[Date]">
+        <RE:DataType>
+            <RE:SystemDataType>
+                <RE:Length>0</RE:Length>
+                <RE:NumericPrecision>0</RE:NumericPrecision>
+                <RE:NumericScale>0</RE:NumericScale>
+                <RE:TypeSpec>DateTime</RE:TypeSpec>
+            </RE:SystemDataType>
+        </RE:DataType>
+        <RE:IsColumnSet>False</RE:IsColumnSet>
+        <RE:IsSparse>False</RE:IsSparse>
+        <RE:Name>Date</RE:Name>
+        <RE:Nullable>False</RE:Nullable>
+        <RE:RowGuidCol>False</RE:RowGuidCol>
+    </RE:Column>
+    <RE:ForeignKeyConstraint MM:Key="/Database[expt]/Schema[dbo]/Table[expenses]/ForeignKeyConstraint[FK_Expenses_catagories]">
+        <RE:Parent MM:ReferenceKey="/Database[expt]/Schema[dbo]/Table[expenses]" />
+        <RE:Columns>
+            <MM:Reference MM:ReferenceKey="/Database[expt]/Schema[dbo]/Table[expenses]/ForeignKeyConstraint[FK_Expenses_catagories]/ForeignKeyColumn[Catagory]" />
+        </RE:Columns>
+        <RE:DeleteAction>NoAction</RE:DeleteAction>
+        <RE:IsChecked>True</RE:IsChecked>
+        <RE:IsEnabled>True</RE:IsEnabled>
+        <RE:Name>FK_Expenses_catagories</RE:Name>
+        <RE:NotForReplication>False</RE:NotForReplication>
+        <RE:ReferencedTable MM:ReferenceKey="/Database[expt]/Schema[dbo]/Table[catagories]" />
+        <RE:UpdateAction>NoAction</RE:UpdateAction>
+    </RE:ForeignKeyConstraint>
+    <RE:PrimaryKeyConstraint MM:Key="/Database[expt]/Schema[dbo]/Table[expenses]/PrimaryKeyConstraint[PK_Expenses]">
+        <RE:Parent MM:ReferenceKey="/Database[expt]/Schema[dbo]/Table[expenses]" />
+        <RE:AssociatedIndex MM:ReferenceKey="/Database[expt]/Schema[dbo]/Table[expenses]/RelationalIndex[PK_Expenses]" />
+        <RE:Name>PK_Expenses</RE:Name>
+    </RE:PrimaryKeyConstraint>
+    <RE:ForeignKeyColumn MM:Key="/Database[expt]/Schema[dbo]/Table[expenses]/ForeignKeyConstraint[FK_Expenses_catagories]/ForeignKeyColumn[Catagory]">
+        <RE:ReferencedColumn MM:ReferenceKey="/Database[expt]/Schema[dbo]/Table[catagories]/Column[ID]" />
+        <RE:ReferencingColumn MM:ReferenceKey="/Database[expt]/Schema[dbo]/Table[expenses]/Column[Catagory]" />
+    </RE:ForeignKeyColumn>
+</MM:Instances>
